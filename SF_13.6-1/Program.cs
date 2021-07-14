@@ -29,24 +29,18 @@ namespace SF_13._6_1
 
             for (int i = 0; i < iter; i++)
             {
-                //list.Clear();
-                linkedList.Clear();
+                list.Clear();
+                //linkedList.Clear();
 
                 timer.Restart();
 
-
-                //CreateList();  // 23 миллисекунд
-                CreateLinkedList(); //22 миллисекунд
-
+                CreateList();  // 10 миллисекунд
+                //CreateLinkedList(); //11 миллисекунд
 
                 timer.Stop();
 
-                //Console.WriteLine(timer.ElapsedMilliseconds);
                t[i] = timer.ElapsedMilliseconds;
-
             }
-            foreach (var n in t)
-                Console.WriteLine(n);
 
             Array.Sort(t);
             Console.WriteLine("Медианное время работы списка {0} мидисекунд", t[iter / 2]);
